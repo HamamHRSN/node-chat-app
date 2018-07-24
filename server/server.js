@@ -1,24 +1,45 @@
 const path = require('path');
+const http = require('http');
 const express = require('express');
+const socketIO = require('socket.io');
 
-const app = express();
+
+
+const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
+const app = express();
 
-var publicPath = path.join(__dirname, '../public');
-
-app.use(express.static(publicPath));
-
-app.get('/', (req, res) => {
-
-});
-
-
+// const server = http.createServer((req, res) => {
+// });
+// using direct app on creating server give me the same request of the callback function (req, res)
+const server = http.createServer(app); //=========================================================
+const io = socketIO(server);
 
 // console.log(__dirname + '/../public');
 // console.log(publicPath);
+app.use(express.static(publicPath)); 
 
-app.listen(port, () => {
-    console.log(`Started up at port: ${port}`);
+
+
+io.on('connection', (socket) => {
+  console.log('New user connected');
+
+  socket.on('disconnect', () => {
+    console.log('User was disconnected');
+   });
+   
 });
+
+
+
+
+
+// efter using http server using server not app for listening to the port
+// app.listen(port, () => {
+//     console.log(`Started up at port: ${port}`);
+// });
+server.listen(port, () => {
+    console.log(`Started up at port: ${port}`);
+}); // ============================================================================================
 
 
