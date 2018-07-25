@@ -7,29 +7,14 @@ var socket = io();
 //       console.log('Disconnected from server');
 //   });
 
- socket.on('connect', function () {
-      console.log('Connected to server');  
-
-    //   socket.emit('newEmail', {
-    //       to: "hamamhamou.hrsa@gmail.com",
-    //       text: "Hey this is Hamam"
-    //   });
-
-      socket.emit('newMessage', {
-        to: "Salma Hamou",
-        text: "Yup! That is work for me",
+    socket.on('connect', function () {
+        console.log('Connected to server');  
     });
-  });
 
-  socket.on('disconnect', function () {
-      console.log('Disconnected from server');
-  });
+    socket.on('disconnect', function () {
+        console.log('Disconnected from server');
+    });
 
-//   socket.on('newEmail', function (email) {
-//       console.log('New Email', email);
-//   });
-
-
-  socket.on('newMessage', function (message) {
-    console.log('New Message', message);
-});
+    socket.on('newMessage', function (message) {
+        console.log('New Message', message);
+    });
