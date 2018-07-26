@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
     
 </head>
-<body>
-
+<body class="chat">
+    <!-- Pyaculies style in css-->
+    <!--
     <div class="container">
         <h1>Pyaculies</h1>
         <p>Welcome to Hamam chat app</p>
@@ -18,11 +19,33 @@
         <ol id="messages"></ol>
 
         <form id="message-form">
-            <input type="text" name="message" placeholder="Type your message...">
+            <input type="text" name="message" placeholder="Type your message..." autofocus autocomplete="off" />
             <button>Send</button>
         </form>
         <button id="send-location">Send location</button>
     </div>
+    -->
+
+        <div class="chat__sidebar">
+              <h3>People</h3>
+              <div id="users"></div>
+        </div>
+        
+        <div class="chat__main">
+            <ol id="messages" class="chat__messages"></ol>
+            <span id="users-typing"></span>
+        
+            <div class="chat__footer">
+                <form id="message-form">
+                    <input type="text" name="message" placeholder="Type your message..." autofocus autocomplete="off" />
+                    <button>Send</button>
+                </form>
+                <button id="send-location">Send location</button>
+            </div>
+        </div>
+
+
+
         <script src="/socket.io/socket.io.js"></script>
         <script src="/js/libs/jquery-3.3.1.min.js"></script>
         <script src="/js/index.js"></script>
