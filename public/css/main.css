@@ -28,6 +28,14 @@ p{
       background: #272727;
       color: #eeeeee;
 }
+#messages li {
+    padding: 10px;
+    background: #675959;
+    border: 1px solid #ff0000;
+    margin-bottom: 5px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
 #message-form{
     width: 300px;
     margin: 10px auto;
