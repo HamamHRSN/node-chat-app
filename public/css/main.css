@@ -1,19 +1,25 @@
-body { background: #CCC;}
+body { background: #CCC; font-family: Arial, Tahoma;}
 .container{
-    width: 500px;
+    width: 400px;
     margin: 10px auto;
     border: 2px solid #ff0000;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
     background: #675959;
 }
 
 h1 {
     width: 300px;
-    margin: 20px auto;
+    margin: 10px auto;
     text-align: center;
     color: #ff0000;
     border: 1px solid #ff0000;
+    border-radius: 10px;
     background: #000000;
-    padding: 20px;
+    padding: 10px;
+}
+h1::first-letter{
+    color: #eeeeee;
 }
 p{
     text-align: center;
@@ -21,9 +27,10 @@ p{
 }
 #messages {
       width: 300px;
-      min-height: 300px;
+      min-height: 200px;
       border: 1px solid #ff0000;
-      margin: 20px auto;
+      border-radius: 10px;
+      margin: 10px auto;
       padding: 20px;
       background: #272727;
       color: #eeeeee;
@@ -41,6 +48,7 @@ p{
     margin: 10px auto;
     padding: 20px;
     border: 1px solid #ff0000;
+    border-radius: 10px;
     background: #000000;
 }
 #message-form input {
@@ -63,5 +71,27 @@ p{
     background: #ff0000;
     outline: none;
     border: 1px solid #eeeeee;
+    border-radius: 10px;
     
+}
+#message-form button:active, #message-form button:hover{
+    background: #999999;
+    color: #ff0000;
+}
+
+#send-location{
+    height: 30px;
+    margin: 10px 30px;
+    padding: 10px 10px 25px 10px;
+    color: #eeeeee;
+    background: #272727;
+    outline: none;
+    border: 1px solid #eeeeee;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+#send-location:active, #send-location:hover{
+    background: #ff0000;
+    color: #eeeeee;
 }
