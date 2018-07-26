@@ -1,0 +1,59 @@
+body { background: #CCC;}
+.container{
+    width: 500px;
+    margin: 10px auto;
+    border: 2px solid #ff0000;
+    background: #675959;
+}
+
+h1 {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    background: #000000;
+    padding: 20px;
+}
+p{
+    text-align: center;
+    color: #999999;
+}
+#messages {
+      width: 300px;
+      min-height: 300px;
+      border: 1px solid #ff0000;
+      margin: 20px auto;
+      padding: 20px;
+      background: #272727;
+      color: #eeeeee;
+}
+#message-form{
+    width: 300px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #ff0000;
+    background: #000000;
+}
+#message-form input {
+    outline: none;
+    width: 92%;
+    height: 30px;
+    margin-left: 5px;
+    padding-left: 5px;
+    
+   
+}
+
+#message-form button {
+   
+    width: 95%;
+    height: 30px;
+    margin: 5px;
+    margin-top: 15px;
+    color: #eeeeee;
+    background: #ff0000;
+    outline: none;
+    border: 1px solid #eeeeee;
+    
+}
