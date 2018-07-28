@@ -29,11 +29,34 @@ function scrollToBottom(params) {
 //   });
 
     socket.on('connect', function () {
-        console.log('Connected to server');  
+        // console.log('Connected to server');  
+
+        var params = jQuery.deparam(window.location.search);
+
+        socket.emit('join', params, function(err) {
+             if (err) {
+                 alert(err);
+                 window.location.href = '/';
+             } else {
+                 console.log('No error');
+                 
+             }
+        });
     });
 
     socket.on('disconnect', function () {
         console.log('Disconnected from server');
+    });
+
+    socket.on('updateUsersList', function (users) {
+        // console.log('Users list', users);
+        var ol = jQuery('<ol></ol>');
+
+        users.forEach(function (user) {
+            ol.append(jQuery('<li></li>').text(user));
+        });
+
+        jQuery('#users').html(ol);
     });
 
     socket.on('newMessage', function (message) {
@@ -127,3 +150,6 @@ function scrollToBottom(params) {
              alert('Unable to fetch location.');
          });
     });
+
+    // to git all the params from Query on serach withe the name fild attr from forms html >>
+    // jQuery.deparam(window.location.search);   
